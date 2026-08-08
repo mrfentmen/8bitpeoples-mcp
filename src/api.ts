@@ -50,7 +50,7 @@ function cleanText(s: string): string {
 /** The info anchors look like: 8BP142<br> Random: Arpeggio Springs. */
 export function parseListing(html: string): Release[] {
   const out: Release[] = []
-  const re = /<a class="info"[^>]+href="(\/products\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/g
+  const re = /<a[^>]*class="[^"]*info[^"]*"[^>]*href="(\/products\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/g
   let m: RegExpExecArray | null
   while ((m = re.exec(html)) !== null) {
     const slug = m[1]
